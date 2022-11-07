@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MyMethods {
-    Scanner scan = new Scanner(System.in);
+    public static Scanner scan = new Scanner(System.in);
 
     public static void CRUD(ArrayList<BoardGame> bg) {
         boolean keepRunning = true;
@@ -31,7 +31,7 @@ public class MyMethods {
             }
         }
     }
-    public void create(ArrayList<BoardGame> b){
+    public static void create(ArrayList<BoardGame> b){
         System.out.println("Let's add a new board game\n" +
                 "Please enter in the (Name) of the Board Game");
         scan.nextLine();
@@ -50,13 +50,13 @@ public class MyMethods {
         BoardGame bG = new BoardGame(bGName,minPlayers, maxPlayers, owner);
         b.add(bG);
     }
-    public void read(ArrayList<BoardGame> b){
+    public static void read(ArrayList<BoardGame> b){
         for (BoardGame bg: b) {
             System.out.println(bg.toString());
         }
     }
 
-    public void update(ArrayList<BoardGame> b){
+    public static void update(ArrayList<BoardGame> b){
         System.out.println("Let's update a board game\n" +
                 "Please enter in the (Name) of the Board Game you wish to update");
         String searchName = scan.nextLine();
@@ -80,7 +80,7 @@ public class MyMethods {
         }
     }
 
-    public void delete(ArrayList<BoardGame> b){
+    public static void delete(ArrayList<BoardGame> b){
         System.out.println("Warning, once deleted we cannot retrieve the Board Game\n" +
                 "Please enter in the (Name) of the Board Game you wish to Remove");
         String searchName = scan.nextLine();

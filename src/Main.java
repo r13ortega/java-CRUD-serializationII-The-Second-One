@@ -17,5 +17,16 @@ public class Main {
             System.out.println("moving to the CRUD");
         }
         MyMethods.CRUD(list);
+
+        System.out.println("Now would you like to save your new BoardGame List?" +
+                "Type (Yes) to save your list" +
+                "or hit ENTER to end the Board Game Manager");
+        String end = scan.nextLine();
+        if (end.equalsIgnoreCase("Yes")){
+            Serialization.saveData(list);
+            System.out.println("data has been saved successfully..." +
+                    "or it looks like it anyways :)");
+        }
+        System.out.println("Ending.... Good Bye");
     }
 }

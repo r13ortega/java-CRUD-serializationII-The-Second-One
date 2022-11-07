@@ -7,9 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static ArrayList<BoardGame> list = new ArrayList<>();
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
-
         System.out.println("Hello, Welcome to Jurassic... um I mean Game Board Manager\n" +
                 "Now would you like to load your data?\n" +
                 "Type (Yes) to load\n" +

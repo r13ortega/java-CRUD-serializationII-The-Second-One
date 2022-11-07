@@ -15,7 +15,12 @@ public class MyMethods {
                     "Type (R) to read all Board Games \n" +
                     "Type (U) to update a Board Game\n" +
                     "Type (D) to remove a Board Game\n \n" +
-                    "Type (Q) to quit and save...maybe");
+                    "Type (Q) to end CRUD and (save)...maybe\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "borrow or steal");
             String answer = scan.nextLine();
             if (answer.equalsIgnoreCase("C")) {
                 create(bg);
@@ -27,6 +32,10 @@ public class MyMethods {
                 delete(bg);
             } else if (answer.equalsIgnoreCase("Q")) {
                 keepRunning = false;
+            } else if (answer.equalsIgnoreCase("borrow")) {
+                borrowingBoardGame(bg);
+            } else if (answer.equalsIgnoreCase("steal")) {
+                stealBoardGames(bg);
             }
         }
     }
@@ -88,5 +97,25 @@ public class MyMethods {
         }
     }
 
+
+    public static void stealBoardGames(ArrayList<BoardGame> boardGame){
+        for (BoardGame bg: boardGame) {
+            if (bg.isOriginalOwner() == false){
+                bg.setOriginalOwner(true);
+            }
+        }
+        System.out.println("heh, you are currently borrowing 0 Board Games");
+    }
+
+    public static void borrowingBoardGame(ArrayList<BoardGame> board){ //getBorrowing()
+        int numOfBorrowing = 0;
+        for (BoardGame bg: board) {
+            if (bg.isOriginalOwner() == false){
+                System.out.println(bg.toString());
+                numOfBorrowing++;
+            }
+        }
+        System.out.println("You are currently borrowing " + numOfBorrowing + " Board Games");
+    }
 
 }

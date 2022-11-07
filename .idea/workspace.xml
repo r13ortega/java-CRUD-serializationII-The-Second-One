@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c358acfa-69da-4c78-a245-9ed9344348c4" name="Changes" comment="Git the second one&#10;thinking my first attempt at Serialzation CRUD had a bad framework so starting over">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BoardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serialization.java" afterDir="false" />

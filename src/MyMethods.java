@@ -11,9 +11,7 @@ public class MyMethods {
         boolean keepRunning = true;
         //CollectionOfBG theBoardGame = new CollectionOfBG();
         Scanner scan = new Scanner(System.in);
-        //theBoardGame.intro();
-        loadData();
-
+        Serialization.loadData(bg);
         while (keepRunning) {
             System.out.println("Type (C) to save a new Board Games \n" +
                     "Type (R) to read all Board Games \n" +
@@ -27,11 +25,9 @@ public class MyMethods {
             } else if (answer.equalsIgnoreCase("R")) {
                 read(bg);
             } else if (answer.equalsIgnoreCase("U")) {
-                update();
+                update(bg);
             } else if (answer.equalsIgnoreCase("D")) {
-                delete();
-            } else if (answer.equalsIgnoreCase("S")) {
-                saveData();
+                delete(bg);
             } else if (answer.equalsIgnoreCase("Q")) {
                 keepRunning = false;
             }
@@ -61,4 +57,41 @@ public class MyMethods {
             System.out.println(bg.toString());
         }
     }
+
+    public void update(ArrayList<BoardGame> b){
+        System.out.println("Let's update a board game\n" +
+                "Please enter in the (Name) of the Board Game you wish to update");
+        String searchName = scan.nextLine();
+        for (BoardGame bg: b) {
+            if (searchName.equalsIgnoreCase(bg.boardGameName)){
+                System.out.println("Please enter in the minimum number of players needed to play");
+                int minPlayers = scan.nextInt();
+                scan.nextLine();
+                System.out.println("Please enter in the maximum number of players needed to play");
+                int maxPlayers = scan.nextInt();
+                scan.nextLine();
+                System.out.println("Do you own this Board Game?\n" +
+                        "(true) or (false)");
+                boolean owner = scan.nextBoolean();
+                scan.nextLine();
+                bg.boardGameName = searchName;
+                bg.minNumOfPlayers = minPlayers;
+                bg.maxNumOfPlayers = maxPlayers;
+                bg.setOriginalOwner(owner);
+            }
+        }
+    }
+
+    public void delete(ArrayList<BoardGame> b){
+        System.out.println("Warning, once deleted we cannot retrieve the Board Game\n" +
+                "Please enter in the (Name) of the Board Game you wish to Remove");
+        String searchName = scan.nextLine();
+        for (BoardGame bg: b) {
+            if (searchName.equalsIgnoreCase(bg.boardGameName)){
+                b.remove(bg);
+            }
+        }
+    }
+
+
 }

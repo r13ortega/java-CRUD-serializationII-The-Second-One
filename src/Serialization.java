@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Serialization {
-    public void saveData(ArrayList<BoardGame> b){
+    public static void saveData(ArrayList<BoardGame> b){
         //method does load successfully
         try {
             FileOutputStream fileOut = new FileOutputStream("BoardGames.ser");
@@ -20,8 +20,7 @@ public class Serialization {
             //history of all the methods that were called - allow us to see where the code went wrong.
         }
     }
-    public void loadData(){
-        ArrayList<BoardGame> b = new ArrayList<>();
+    public static void loadData(ArrayList<BoardGame> b){
         try {
             //read object from a file
             FileInputStream file = new FileInputStream("BoardGames.ser");

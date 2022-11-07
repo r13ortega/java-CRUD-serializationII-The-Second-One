@@ -7,11 +7,9 @@ import java.util.Scanner;
 public class MyMethods {
     Scanner scan = new Scanner(System.in);
 
-    public void CRUD(ArrayList<BoardGame> bg) {
+    public static void CRUD(ArrayList<BoardGame> bg) {
         boolean keepRunning = true;
-        //CollectionOfBG theBoardGame = new CollectionOfBG();
         Scanner scan = new Scanner(System.in);
-        Serialization.loadData(bg);
         while (keepRunning) {
             System.out.println("Type (C) to save a new Board Games \n" +
                     "Type (R) to read all Board Games \n" +

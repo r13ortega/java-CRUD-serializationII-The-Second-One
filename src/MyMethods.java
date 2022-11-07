@@ -15,8 +15,7 @@ public class MyMethods {
                     "Type (R) to read all Board Games \n" +
                     "Type (U) to update a Board Game\n" +
                     "Type (D) to remove a Board Game\n \n" +
-                    "Type (S) to save newly added Board Games\n" +
-                    "Type (Q) to quit");
+                    "Type (Q) to quit and save...maybe");
             String answer = scan.nextLine();
             if (answer.equalsIgnoreCase("C")) {
                 create(bg);
@@ -33,9 +32,7 @@ public class MyMethods {
     }
     public static void create(ArrayList<BoardGame> b){
         System.out.println("Let's add a new board game\n" +
-                "Please enter in the (Name) of the Board Game");
-        scan.nextLine();
-        String bGName = scan.nextLine();
+                "Please enter in the (Name) of the Board Game");String bGName = scan.nextLine();
         System.out.println("Please enter in the minimum number of players needed to play");
         int minPlayers = scan.nextInt();
         scan.nextLine();

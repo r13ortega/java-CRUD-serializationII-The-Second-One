@@ -1,4 +1,5 @@
-public class BoardGame extends Serialization {
+import java.io.*;
+public class BoardGame implements Serializable{
     public String boardGameName;
 
     public int minNumOfPlayers;

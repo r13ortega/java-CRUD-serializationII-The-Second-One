@@ -20,18 +20,20 @@ public class Serialization {
             //history of all the methods that were called - allow us to see where the code went wrong.
         }
     }
-    public static void loadData(ArrayList<BoardGame> b){
+    public static void loadData(ArrayList<BoardGame> board){//I hate this
+        //ArrayList<BoardGame> board;
         try {
             //read object from a file
             FileInputStream file = new FileInputStream("BoardGames.ser");
             //create a connection to a file
             ObjectInputStream in = new ObjectInputStream(file);
             //method for deserialize of an object
-            b = (ArrayList<BoardGame>) in.readObject();
-            //read object  and convert data to type BoardGames
+            board = (ArrayList<BoardGame>) in.readObject();
+            //read object  and convert data to type BoardGame
             in.close();
             file.close();
             System.out.println("ArrayList has been deserialized!! OMG!");
+            System.out.println(board.size());
         } catch (IOException z){
             z.printStackTrace();
         } catch (ClassNotFoundException f){

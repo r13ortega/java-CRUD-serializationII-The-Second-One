@@ -1,4 +1,4 @@
-public class BoardGame {
+public class BoardGame extends Serialization {
     public String boardGameName;
 
     public int minNumOfPlayers;

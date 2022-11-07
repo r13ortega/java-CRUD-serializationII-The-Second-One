@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Serialization {
-    public void saveData(){
+    public void saveData(ArrayList<BoardGame> b){
         //method does load successfully
         try {
             FileOutputStream fileOut = new FileOutputStream("BoardGames.ser");
@@ -10,7 +10,7 @@ public class Serialization {
             //responsible for opening a connection to a file
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             //out does load successfully
-            out.writeObject(this.boardGames);
+            out.writeObject(b);
             //writing the object that we passed in = where we're directly writing the file
             out.close();
             fileOut.close();
@@ -21,14 +21,14 @@ public class Serialization {
         }
     }
     public void loadData(){
-        this.boardGames = null;
+        ArrayList<BoardGame> b = new ArrayList<>();
         try {
             //read object from a file
             FileInputStream file = new FileInputStream("BoardGames.ser");
             //create a connection to a file
             ObjectInputStream in = new ObjectInputStream(file);
             //method for deserialize of an object
-            this.boardGames = (ArrayList<BoardGames>) in.readObject();
+            b = (ArrayList<BoardGame>) in.readObject();
             //read object  and convert data to type BoardGames
             in.close();
             file.close();
